@@ -1,0 +1,37 @@
+deploy static website
+get the address of the site
+get the /artwork.png address
+paste the image address into the image field in the json folder
+getting the json address
+for Remix file -- site address https://ntrfiqyswykj.usemoralis.com/{id}.json
+get rinkeby test nest ether through faucets
+select injected web3
+get the transaction hash and search for it rinkeby.etherscan
+get the contract address
+go to opensea.io/get-listed
+
+https://ntrfiqyswykj.usemoralis.com
+0x7720dce30ff35b3560a7b9878cf6e8d6eaf68645
+
+https://ryp6krzvbcoy.usemoralis.com:2053/server
+a8RiGzJnX5H8DFKlnvanOzsL5UTfbak8oRzPwXWU
+
+key J4fdEbijdUoqHeu
+
+FnbeLrQmaG4GrJB
+
+const ethers = Moralis.web3Library
+
+const daiAddress = "dai.tokens.ethers.eth";
+const daiAbi = [
+  "function name() view returns (string)",
+  "function symbol() view returns (string)",
+  "function balanceOf(address) view returns (uint)",
+  "function transfer(address to, uint amount)",
+  "event Transfer(address indexed from, address indexed to, uint amount)"
+];
+const daiContract = new ethers.Contract(daiAddress, daiAbi, provider);
+
+const name = await daiContract.name()
+console.log(name)
+// 'Dai Stablecoin'
